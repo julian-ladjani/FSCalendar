@@ -70,6 +70,8 @@ typedef NS_ENUM(NSUInteger, FSCalendarMonthPosition);
 @property (strong, nonatomic) UIColor *preferredSubtitleSelectionColor;
 @property (strong, nonatomic) UIColor *preferredBorderDefaultColor;
 @property (strong, nonatomic) UIColor *preferredBorderSelectionColor;
+@property (strong, nonatomic) UIFont *preferredTitleFont;
+@property (strong, nonatomic) UIFont *preferredSubtitleFont;
 @property (assign, nonatomic) CGPoint preferredTitleOffset;
 @property (assign, nonatomic) CGPoint preferredSubtitleOffset;
 @property (assign, nonatomic) CGPoint preferredImageOffset;

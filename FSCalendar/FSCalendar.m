@@ -1350,12 +1350,14 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     FSCalendarInvalidateCellAppearance(preferredFillSelectionColor,fillSelectionColorForDate);
     FSCalendarInvalidateCellAppearance(preferredTitleDefaultColor,titleDefaultColorForDate);
     FSCalendarInvalidateCellAppearance(preferredTitleSelectionColor,titleSelectionColorForDate);
+    FSCalendarInvalidateCellAppearance(preferredTitleFont,titleFontForDate);
 
     FSCalendarInvalidateCellAppearanceWithDefault(preferredTitleOffset,titleOffsetForDate,CGPointInfinity);
     if (cell.subtitle) {
         FSCalendarInvalidateCellAppearance(preferredSubtitleDefaultColor,subtitleDefaultColorForDate);
         FSCalendarInvalidateCellAppearance(preferredSubtitleSelectionColor,subtitleSelectionColorForDate);
         FSCalendarInvalidateCellAppearanceWithDefault(preferredSubtitleOffset,subtitleOffsetForDate,CGPointInfinity);
+        FSCalendarInvalidateCellAppearance(preferredSubtitleFont,subtiteFontForDate);
     }
     if (cell.numberOfEvents) {
         FSCalendarInvalidateCellAppearance(preferredEventDefaultColors,eventDefaultColorsForDate);

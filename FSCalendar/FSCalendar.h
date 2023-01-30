@@ -235,6 +235,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (CGFloat)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance borderRadiusForDate:(NSDate *)date;
 
+/**
+ * Asks the delegate for a font for the specific date.
+ */
+- (nullable UIFont *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance titleFontForDate:(NSDate *)date;
+
+- (nullable UIFont *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance subtiteFontForDate:(NSDate *)date;
+
 @end
 
 #pragma mark - Primary

@@ -18,6 +18,8 @@
 @property (readonly, nonatomic) UIColor *colorForTitleLabel;
 @property (readonly, nonatomic) UIColor *colorForSubtitleLabel;
 @property (readonly, nonatomic) UIColor *colorForCellBorder;
+@property (readonly, nonatomic) UIFont *fontForTitleLabel;
+@property (readonly, nonatomic) UIFont *fontForSubtitleLabel;
 @property (readonly, nonatomic) NSArray<UIColor *> *colorsForEvents;
 @property (readonly, nonatomic) CGFloat borderRadius;
 
@@ -195,7 +197,7 @@
     if (![textColor isEqual:_titleLabel.textColor]) {
         _titleLabel.textColor = textColor;
     }
-    UIFont *titleFont = self.calendar.appearance.titleFont;
+    UIFont *titleFont = self.fontForTitleLabel;
     if (![titleFont isEqual:_titleLabel.font]) {
         _titleLabel.font = titleFont;
     }
@@ -204,7 +206,7 @@
         if (![textColor isEqual:_subtitleLabel.textColor]) {
             _subtitleLabel.textColor = textColor;
         }
-        titleFont = self.calendar.appearance.subtitleFont;
+        titleFont = self.fontForSubtitleLabel;
         if (![titleFont isEqual:_subtitleLabel.font]) {
             _subtitleLabel.font = titleFont;
         }
@@ -296,6 +298,16 @@
         return self.preferredSubtitleSelectionColor ?: [self colorForCurrentStateInDictionary:_appearance.subtitleColors];
     }
     return self.preferredSubtitleDefaultColor ?: [self colorForCurrentStateInDictionary:_appearance.subtitleColors];
+}
+
+- (UIFont *)fontForTitleLabel
+{
+    return self.preferredTitleFont ?: _appearance.titleFont;
+}
+
+- (UIFont *)fontForSubtitleLabel
+{
+    return self.preferredSubtitleFont ?: _appearance.subtitleFont;
 }
 
 - (UIColor *)colorForCellBorder
