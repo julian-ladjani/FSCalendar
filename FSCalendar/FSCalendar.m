@@ -1345,7 +1345,8 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     } else { \
         cell.SEL1 = DEFAULT; \
     }
-    
+
+    FSCalendarInvalidateCellAppearance(preferredContentViewDefaultColor,contentDefaultColorForDate);
     FSCalendarInvalidateCellAppearance(preferredFillDefaultColor,fillDefaultColorForDate);
     FSCalendarInvalidateCellAppearance(preferredFillSelectionColor,fillSelectionColorForDate);
     FSCalendarInvalidateCellAppearance(preferredTitleDefaultColor,titleDefaultColorForDate);

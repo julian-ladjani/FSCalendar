@@ -14,6 +14,7 @@
 
 @interface FSCalendarCell ()
 
+@property (readonly, nonatomic) UIColor *colorForCellContent;
 @property (readonly, nonatomic) UIColor *colorForCellFill;
 @property (readonly, nonatomic) UIColor *colorForTitleLabel;
 @property (readonly, nonatomic) UIColor *colorForSubtitleLabel;
@@ -84,7 +85,7 @@
     imageView.contentMode = UIViewContentModeBottom|UIViewContentModeCenter;
     [self.contentView addSubview:imageView];
     self.imageView = imageView;
-    
+
     self.clipsToBounds = NO;
     self.contentView.clipsToBounds = NO;
     
@@ -214,9 +215,13 @@
     
     UIColor *borderColor = self.colorForCellBorder;
     UIColor *fillColor = self.colorForCellFill;
+    UIColor *contentColor = self.colorForCellContent;
     
     BOOL shouldHideShapeLayer = !self.selected && !self.dateIsToday && !borderColor && !fillColor;
-    
+
+    if (![contentColor isEqual:self.contentView.backgroundColor]) {
+        self.contentView.backgroundColor = contentColor;
+    }
     if (_shapeLayer.opacity == shouldHideShapeLayer) {
         _shapeLayer.opacity = !shouldHideShapeLayer;
     }
@@ -308,6 +313,11 @@
 - (UIFont *)fontForSubtitleLabel
 {
     return self.preferredSubtitleFont ?: _appearance.subtitleFont;
+}
+
+- (UIColor *)colorForCellContent
+{
+    return self.preferredContentViewDefaultColor ?: _appearance.contentViewColor;
 }
 
 - (UIColor *)colorForCellBorder

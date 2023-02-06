@@ -180,6 +180,12 @@ typedef NS_OPTIONS(NSUInteger, FSCalendarCaseOptions) {
 @property (strong, nonatomic) UIColor  *subtitleWeekendColor;
 
 /**
+ * The fill color of the contentView for selected state.
+ */
+@property (strong, nonatomic) UIColor  *contentViewColor;
+
+
+/**
  * The fill color of the shape for selected state.
  */
 @property (strong, nonatomic) UIColor  *selectionColor;

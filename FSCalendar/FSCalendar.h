@@ -210,6 +210,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance borderSelectionColorForDate:(NSDate *)date;
 
 /**
+ * Asks the delegate for a content color in unselected state for the specific date.
+ */
+- (nullable UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance contentDefaultColorForDate:(NSDate *)date;
+
+/**
  * Asks the delegate for an offset for day text for the specific date.
  */
 - (CGPoint)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance titleOffsetForDate:(NSDate *)date;
